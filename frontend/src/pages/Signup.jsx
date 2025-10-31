@@ -36,7 +36,7 @@ const Signup = () => {
   // ✅ Google OAuth Handler
   const handleGoogleSignup = () => {
     try {
-      window.location.href = "http://localhost:5000/auth/google";
+      window.location.href = "https://image-search-google-o-auth.vercel.app/auth/google";
     } catch (error) {
       console.log('Not authenticated', error);
     }
