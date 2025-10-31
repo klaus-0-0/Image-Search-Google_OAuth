@@ -7,6 +7,6 @@ export default defineConfig({
   server: {
     port: Number(process.env.PORT) || 5173,
     host: true,
-    allowedHosts: ['image-search-frontend-82kz.onrender.com'], 
+    // allowedHosts: ['image-search-frontend-82kz.onrender.com'], 
   },
 })
