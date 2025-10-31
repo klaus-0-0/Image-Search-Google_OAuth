@@ -86,7 +86,7 @@ router.post('/search', tokenverify, async (req, res) => {
 
     // Direct fetch to Unsplash API
     const response = await fetch(
-      `https://api.unsplash.com/search/photos?query=${term}&per_page=1&client_id=${process.env.UNSPLASH_ACCESS_KEY}`
+      `https://api.unsplash.com/search/photos?query=${term}&per_page=8&client_id=${process.env.UNSPLASH_ACCESS_KEY}`
     );
 
     if (!response.ok) {
