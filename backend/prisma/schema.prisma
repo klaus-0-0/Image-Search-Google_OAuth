@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  username  String
+  email     String   @unique
+  password  String?  // Optional for Google users
+  googleId  String?  @unique // Google's user ID
+  avatar    String?  // Google profile picture
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  searchHistory SearchHistory[]
+}
+
+model SearchHistory {
+  id         String   @id @default(uuid())
+  searchTerm String
+  timestamp  DateTime @default(now())
+  
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+}
