@@ -1,5 +1,5 @@
 const config = {
-    apiurl: "http://localhost:5000/api"
+    apiurl: "https://image-search-google-o-auth.vercel.app/api"
 }
 
 export default config;
