@@ -1,5 +1,5 @@
 const config = {
-    apiurl: "http://localhost:5173"
+    apiurl: "https://image-search-google-o-auth-tx8q.vercel.app/"
 }
 
 module.exports = config;
