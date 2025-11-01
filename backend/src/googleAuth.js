@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://image-search-google-o-auth.vercel.app/auth/google/callback"
+    callbackURL: "https://image-search-google-oauth.onrender.com/auth/google/callback"
 }, async (accessToken, refreshToken, profile, done) => {
     try {
         console.log('Google profile received:', profile.id);
