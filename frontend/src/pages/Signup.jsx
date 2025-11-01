@@ -36,7 +36,7 @@ const Signup = () => {
   // ✅ Google OAuth Handler
   const handleGoogleSignup = () => {
     try {
-      window.location.href = "https://image-search-google-o-auth.vercel.app/auth/google";
+      window.location.href = "https://image-search-google-oauth.onrender.com/auth/google";
     } catch (error) {
       console.log('Not authenticated', error);
     }
