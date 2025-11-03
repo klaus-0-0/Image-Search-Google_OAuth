@@ -1,4 +1,5 @@
 import logo from "../assets/wallpaper.png"
+import search from "../assets/search2.png"
 import signout from "../assets/signout.png"
 import { useTheme } from "../context/ThemeContext"
 import { useEffect, useState } from "react"
