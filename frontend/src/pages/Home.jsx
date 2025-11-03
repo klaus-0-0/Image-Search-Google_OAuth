@@ -148,9 +148,8 @@ function Home() {
                         onChange={(e) => setSearchTerm(e.target.value)}
                         onClick={() => setHandleHistory(true)}
                     />
-                    <button
-                        className="absolute right-2 transform -translate-y-1/2 top-1/2"
-                        onClick={() => handleSearch()}>
+                    <button type="submit"
+                        className="absolute right-2 transform -translate-y-1/2 top-1/2">
                         <img src={search} className="w-8 h-8"></img>
                     </button>
                     
