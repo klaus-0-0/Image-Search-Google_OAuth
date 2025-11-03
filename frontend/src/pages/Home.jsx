@@ -140,19 +140,29 @@ function Home() {
                 </div>
             </nav>
             <nav className={`sticky top-23 z-50 flex justify-center`}>
-                <form onSubmit={handleSearch} className="absolute flex-1 items-center justify-center">
-                    <input
-                        className={`sm:w-90 h-10 border rounded-full shadow-xl px-6 text-center ${inputBgcolor}`}
-                        placeholder="search..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        onClick={() => setHandleHistory(true)}
-                    />
-                    <button type="submit"
-                        className="absolute right-2 transform -translate-y-1/2 top-1/2">
-                        <img src={search} className="w-8 h-8"></img>
-                    </button>
-                    
+                <div className="relative flex items-center justify-center">
+                    <div className="relative flex items-center">
+                        <input
+                            className={`sm:w-90 h-10 border rounded-full shadow-xl px-6 pr-12 text-center ${inputBgcolor}`}
+                            placeholder="search..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            onClick={() => setHandleHistory(true)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    handleSearch();
+                                }
+                            }}
+                        />
+                        <button
+                            type="button"
+                            className="absolute right-2 transform -translate-y-1/2 top-1/2"
+                            onClick={handleSearch}
+                        >
+                            <img src={search} className="w-8 h-8" alt="Search" />
+                        </button>
+                    </div>
+
                     {handleHistory && Array.isArray(history) && history.length > 0 && (
                         <div className={`absolute top-12 left-1/2 transform -translate-x-1/2 w-64 rounded-lg shadow-lg ${isDark ? 'bg-gray-800' : 'bg-white'} border ${isDark ? 'border-gray-700' : 'border-gray-200'}`}>
                             <div className="p-2">
@@ -176,7 +186,7 @@ function Home() {
                             </div>
                         </div>
                     )}
-                </form>
+                </div>
             </nav>
             <nav className="flex gap-4 justify-center py-4 mt-12">  {/* Added mt-12 margin-top side for spacing */}
                 {topSearch.map((value, index) => (
