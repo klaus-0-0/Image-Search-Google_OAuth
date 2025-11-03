@@ -92,6 +92,7 @@ function Home() {
             setImages(data.images);
             console.log("data", data);
             setSearchTerm("");
+            setSearchTerm1("");
         } catch (error) {
             console.error('Search error:', error);
             alert('Failed to search images');
