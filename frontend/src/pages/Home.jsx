@@ -146,7 +146,12 @@ function Home() {
                         onChange={(e) => setSearchTerm(e.target.value)}
                         onClick={() => setHandleHistory(true)}
                     />
-
+                    <button
+                        className="absolute right-2 transform -translate-y-1/2 top-1/2"
+                        onClick={() => handleSearch()}>
+                        <img src={search} className="w-8 h-8"></img>
+                    </button>
+                    
                     {handleHistory && Array.isArray(history) && history.length > 0 && (
                         <div className={`absolute top-12 left-1/2 transform -translate-x-1/2 w-64 rounded-lg shadow-lg ${isDark ? 'bg-gray-800' : 'bg-white'} border ${isDark ? 'border-gray-700' : 'border-gray-200'}`}>
                             <div className="p-2">
